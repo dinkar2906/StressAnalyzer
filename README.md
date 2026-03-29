@@ -52,7 +52,7 @@ pip install -r requirements.txt
 ### 3. Run backend server
 
 ```
-python main.py
+python server.py
 ```
 
 ### 4. Start ngrok
