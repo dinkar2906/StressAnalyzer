@@ -131,27 +131,6 @@ StressAnalyzer/
 
 ---
 
-## My Contribution
-
-Speech Emotion Recognition module (wav2vec2 pipeline, SoundDevice audio capture,
-emotion-to-stress mapping), Flask API integration for the audio endpoint, and overall
-system testing and performance evaluation across 30 subjects.
-
----
-
-## Team
-
-| Member           | Role                                                    |
-|------------------|---------------------------------------------------------|
-| Abhay Pratap Yadav | Facial Emotion Recognition, Android UI               |
-| Ayush Vyas       | ECG hardware (AD8232 + ESP32), HRV extraction           |
-| Dinkar Upadhyay  | Speech Emotion Recognition, Flask API, system testing   |
-| Gautam Rajput    | Flask backend, fusion algorithm, Android connectivity   |
-
-Supervised by Dr. Atul Kumar Dwivedi, BIET Jhansi.
-
----
-
 ## Author
 
 Dinkar Upadhyay
