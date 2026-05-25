@@ -49,23 +49,24 @@ baseline and stress conditions across all 30 subjects (p < 0.001, Cohen's d > 1.
 | Android    | Java, OkHttp 4.11, Gson 2.10, Android API 29+                |
 
 ## Architecture
----
 
+```
 Android App (Java)
-└── Sends HTTP GET to /api/stress every 5 seconds
+├── Sends HTTP GET to /api/stress every 5 seconds
 └── Displays per-modality and fused stress scores (colour-coded)
+
 Flask Backend (Python)
-└── /api/face   — OpenCV capture → mini_XCEPTION CNN → stress %
-└── /api/voice  — SoundDevice 5s audio → wav2vec2 → stress %
-└── /api/ecg    — ESP32 Bluetooth → NeuroKit2 HRV → stress %
+├── /api/face   — OpenCV capture → mini_XCEPTION CNN → stress %
+├── /api/voice  — SoundDevice 5s audio → wav2vec2 → stress %
+├── /api/ecg    — ESP32 Bluetooth → NeuroKit2 HRV → stress %
 └── /api/stress — ThreadPoolExecutor runs all 3 concurrently → fusion
+
 Hardware
 └── AD8232 ECG sensor → ESP32 (250 Hz ADC) → Bluetooth SPP → Flask
+```
 
-Total pipeline latency: ~3.8 seconds per cycle (within 5-second update window).
-wav2vec2 inference dominates at ~2.1s; face ~0.9s; ECG ~0.8s.
-
----
+> **Total pipeline latency: ~3.8s per cycle** (within 5-second update window).  
+> wav2vec2 inference dominates at ~2.1s · face ~0.9s · ECG ~0.8s
 
 ## Getting Started
 
