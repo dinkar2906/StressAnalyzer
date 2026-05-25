@@ -1,87 +1,18 @@
-# 🧠 AI-Based Stress Detection System
+# StressAnalyzer
 
-A real-time **multimodal stress analysis application** that detects stress levels using **facial expressions, speech signals, and ECG data**.
+A real-time multimodal stress detection system that combines facial emotion recognition,
+speech emotion recognition, and ECG-based physiological analysis to estimate stress levels.
+Built as a B.Tech final year project at BIET Jhansi (2025–26).
 
----
-
-## 🚀 Features
-
-* 🎤 Speech Emotion Recognition (wav2vec2)
-* 😀 Facial Emotion Detection (CNN - FER2013)
-* ❤️ ECG-based stress estimation
-* 📱 Android app integration
-* ⚡ Real-time stress analysis
-* 🌐 API communication using Flask + ngrok
+[![Download APK](https://img.shields.io/badge/Download-APK-green?style=flat&logo=android)](https://github.com/dinkar2906/StressAnalyzer/releases/latest)
 
 ---
 
-## 🛠️ Tech Stack
+## Overview
 
-* Python, OpenCV, TensorFlow/Keras
-* Hugging Face Transformers
-* Flask (Backend API)
-* Android (Java/Kotlin)
-* ngrok (for tunneling)
+Most stress detection systems rely on a single input signal, which makes them fragile — poor
+lighting breaks facial systems, background noise breaks speech systems, electrode artifacts
+break ECG systems. This project addresses that by fusing all three.
 
----
-
-## 🧩 Project Architecture
-
-1. Capture input (voice / face / ECG)
-2. Process using ML models
-3. Combine results (multimodal fusion)
-4. Output stress percentage in real-time
-
----
-
-## ⚙️ How to Run
-
-### 1. Clone the repo
-
-```
-git clone https://github.com/YOUR_USERNAME/AI-Stress-Analyzer.git
-cd AI-Stress-Analyzer
-```
-
-### 2. Install dependencies
-
-```
-pip install -r requirements.txt
-```
-
-### 3. Run backend server
-
-```
-python server.py
-```
-
-### 4. Start ngrok
-
-```
-ngrok http 5000
-```
-
-### 5. Connect Android app
-
-* Paste ngrok URL in your app
-
----
-
-## 📊 Output
-
-* Displays stress percentage
-* Real-time feedback using multiple inputs
-
----
-
-## 🎯 Future Improvements
-
-* Improve model accuracy
-* Add wearable device integration
-* Cloud deployment
-
----
-
-## 👨‍💻 Author
-
-Dinkar Upadhyay
+Three independent modalities are processed concurrently and combined using a weighted late
+fusion formula:
