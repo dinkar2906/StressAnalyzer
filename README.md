@@ -48,9 +48,8 @@ baseline and stress conditions across all 30 subjects (p < 0.001, Cohen's d > 1.
 | ECG        | AD8232 + ESP32, NeuroKit2 0.2.7, PyBluez                     |
 | Android    | Java, OkHttp 4.11, Gson 2.10, Android API 29+                |
 
----
-
 ## Architecture
+---
 
 Android App (Java)
 └── Sends HTTP GET to /api/stress every 5 seconds
@@ -98,6 +97,7 @@ Flash the ESP32 firmware from the `firmware/` directory using Arduino IDE.
 
 ## Project Structure
 
+```
 StressAnalyzer/
 ├── server.py              # Flask entry point — fusion logic, /api/stress
 ├── face.py                # mini_XCEPTION facial emotion recognition
@@ -108,8 +108,7 @@ StressAnalyzer/
 ├── java/                  # Android app source (MVP architecture)
 ├── res/                   # Android UI resources
 └── requirements.txt
-
----
+```
 
 ## Stress Level Classification
 
